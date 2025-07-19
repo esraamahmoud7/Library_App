@@ -92,13 +92,19 @@ class _LoginViewState extends State<LoginView> {
                                obscureText: _obscureText
                            ),
                            SizedBox(height: 12,),
-                           Align(
-                             alignment: Alignment.centerRight,
-                             child: Text("Forget Password",
-                               style:AppStyles.textStyle20.copyWith(
-                                   color: AppColors.primaryColor,
-                                   fontWeight: FontWeight.w500
-                               )
+                           GestureDetector(
+                             onTap: ()
+                             {
+                               GoRouter.of(context).push(PagesRoute.forgetPass);
+                             },
+                             child: Align(
+                               alignment: Alignment.centerRight,
+                               child: Text("Forget Password",
+                                 style:AppStyles.textStyle20.copyWith(
+                                     color: AppColors.primaryColor,
+                                     fontWeight: FontWeight.w500
+                                 )
+                               ),
                              ),
                            ),
                            SizedBox(height: 85,),

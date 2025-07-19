@@ -4,13 +4,13 @@ import '../../../../../core/colors/AppColors.dart';
 import '../../../../../core/theme/appTheme.dart';
 
 class CustomPassword extends StatelessWidget {
-  const CustomPassword({super.key, required this.label, this.prefixIcon, this.suffixIcon, required this.hint, required this.obscureText, required this.warn, this.controller});
+  const CustomPassword({super.key, required this.label, this.prefixIcon, this.suffixIcon, required this.hint, required this.obscureText, required this.warn, this.controller, this.secondCont});
 
   final String label,hint;
   final Widget? prefixIcon,suffixIcon;
   final bool obscureText;
   final String warn;
-  final TextEditingController? controller;
+  final TextEditingController? controller,secondCont;
 
   @override
   Widget build(BuildContext context) {

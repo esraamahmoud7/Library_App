@@ -89,6 +89,7 @@ class _RegisterViewState extends State<RegisterView> {
                       ),
                       CustomPassword(
                         controller: confirmPasswordController,
+                        secondCont: passwordController,
                         warn: " Confirm Password is required",
                         label: "Confirm Password",
                         hint: 'Confirm your Password',
@@ -136,7 +137,6 @@ class _RegisterViewState extends State<RegisterView> {
                               style: AppStyles.textStyle18.copyWith(
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.primaryColor
-
                               ),
                             ),
                           )
