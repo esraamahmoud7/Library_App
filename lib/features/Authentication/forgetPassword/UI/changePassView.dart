@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:library_app/core/theme/appTheme.dart';
 import 'package:library_app/features/Authentication/Register/UI/widgets/customElevatedButton.dart';
+import 'package:library_app/features/Authentication/forgetPassword/UI/widgets/customSnakeBar.dart';
 
 import '../../../../core/Routes/pageRoutes.dart';
 import '../../../../core/colors/AppColors.dart';
@@ -15,7 +16,9 @@ class ChangePassView extends StatefulWidget {
 }
 
 class _ChangePassViewState extends State<ChangePassView> {
-  bool _obscureText = true;
+  bool _obscureText1 = true;
+  bool _obscureText2 = true;
+
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
@@ -49,6 +52,7 @@ class _ChangePassViewState extends State<ChangePassView> {
         centerTitle: true,
       ),
       body: Form(
+        key: _formKey,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 40),
           child: Column(
@@ -61,44 +65,52 @@ class _ChangePassViewState extends State<ChangePassView> {
                 suffixIcon: IconButton(
                   onPressed: (){
                     setState(() {
-                      _obscureText = !_obscureText;
+                      _obscureText1 = !_obscureText1;
                     });
                   },
                   icon: Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                    _obscureText1 ? Icons.visibility_off : Icons.visibility,
                     color: AppColors.primaryColor,
                     size: 25,
                   ),
-                ), obscureText: _obscureText,
+                ), obscureText: _obscureText1,
               ),
               SizedBox(height: 20,),
               CustomPassword(
                 controller: confirmPasswordController,
+                secondCont: passwordController,
                 warn: " Confirm Password is required",
                 label: "Confirm Password",
                 hint: 'Confirm your Password',
                 suffixIcon: IconButton(
                   onPressed: (){
                     setState(() {
-                      _obscureText = !_obscureText;
+                      _obscureText2 = !_obscureText2;
                     });
                   },
                   icon: Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                    _obscureText2 ? Icons.visibility_off : Icons.visibility,
                     color: AppColors.primaryColor,
                     size: 25,
                   ),
-                ), obscureText: _obscureText,
+                ), obscureText: _obscureText2,
               ),
               SizedBox(height: 100,),
               customElevatedButton(
                 label: "Submit",
-                foregroundColor: _isButtonEnabled ? AppColors.black : AppColors.primaryColor,
-                backgroundColor: _isButtonEnabled ? AppColors.primaryColor : AppColors.grey,
+                foregroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.black : AppColors.primaryColor,
+                backgroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.primaryColor : AppColors.grey,
                 onPressed: _isButtonEnabled
                     ? () {
                   if (_formKey.currentState?.validate() == true) {
-                    GoRouter.of(context).push(PagesRoute.OTP);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      CustomSnakeBar(message : 'Password updated successfully!') as SnackBar
+                    );
+
+                    // Optional navigation
+                    Future.delayed(Duration(seconds: 2), () {
+                      GoRouter.of(context).push(PagesRoute.login);
+                    });
                   }
                 }
                 : null,

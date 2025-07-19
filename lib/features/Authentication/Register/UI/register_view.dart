@@ -109,8 +109,8 @@ class _RegisterViewState extends State<RegisterView> {
                       ),
                       SizedBox(height: 50,),
                       customElevatedButton(
-                        foregroundColor: _isButtonEnabled ? AppColors.black : AppColors.primaryColor,
-                        backgroundColor: _isButtonEnabled ? AppColors.primaryColor : AppColors.grey,
+                        foregroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.black : AppColors.primaryColor,
+                        backgroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.primaryColor : AppColors.grey,
                         label: "Sign Up",
                         onPressed: _isButtonEnabled
                             ? () {

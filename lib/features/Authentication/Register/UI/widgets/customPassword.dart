@@ -29,8 +29,15 @@ class CustomPassword extends StatelessWidget {
         SizedBox(height: 10),
         TextFormField(
           controller: controller,
-          validator: (value) =>
-                    value == null || value.isEmpty ? warn : null,
+          validator: (value) {
+            if (label == "Confirm Password") {
+              if (controller?.text != secondCont?.text) {
+                print(controller?.text);
+                return "Confirm Password doesn't match the password";
+              }
+              return null; // valid
+            }
+          },
           obscureText: obscureText,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
