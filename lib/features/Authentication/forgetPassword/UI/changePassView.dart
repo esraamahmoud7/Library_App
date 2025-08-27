@@ -97,6 +97,7 @@ class _ChangePassViewState extends State<ChangePassView> {
               ),
               SizedBox(height: 100,),
               customElevatedButton(
+                width: 500,
                 label: "Submit",
                 foregroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.black : AppColors.primaryColor,
                 backgroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.primaryColor : AppColors.grey,

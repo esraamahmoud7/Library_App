@@ -148,6 +148,7 @@ class _OtpViewState extends State<OtpView> {
             ),
             const SizedBox(height: 101,),
             customElevatedButton(
+                width: 500,
                 label: "Submit",
                 foregroundColor: _isButtonEnabled ? AppColors.black : AppColors.primaryColor,
                 backgroundColor: _isButtonEnabled ? AppColors.primaryColor : AppColors.grey,

@@ -20,9 +20,9 @@ class CustomPassword extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(label,
-            style: AppStyles.textStyle20.copyWith(
-                color: AppColors.primaryColor,
-                fontWeight: FontWeight.w500
+            style: AppStyles.textStyle22.copyWith(
+              // color: AppColors.primaryColor,
+                fontWeight: FontWeight.w400,
             ),
           ),
         ),
@@ -45,10 +45,10 @@ class CustomPassword extends StatelessWidget {
             hintText: hint,
             contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
-                color: AppColors.primaryColor,   // Border color
-                width: 3.0,           // Border width
+                color: AppColors.grey,   // Border color
+                width: 2.0,           // Border width
               ),
             ),
             errorBorder: UnderlineInputBorder(
@@ -58,10 +58,10 @@ class CustomPassword extends StatelessWidget {
               borderSide: BorderSide(color: Colors.red, width: 2),
             ),
             focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(
                     color: AppColors.primaryColor,   // Border color
-                    width: 3.0,
+                    width: 2.0,
                   )
             )
           ),

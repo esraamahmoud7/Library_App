@@ -19,9 +19,9 @@ class CustomTextField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(label,
-            style: AppStyles.textStyle20.copyWith(
-              color: AppColors.primaryColor,
-                fontWeight: FontWeight.w500
+            style: AppStyles.textStyle22.copyWith(
+              // color: AppColors.primaryColor,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),
@@ -45,22 +45,22 @@ class CustomTextField extends StatelessWidget {
             hintText: hint,
             contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
-                color: AppColors.primaryColor,
-                width: 3.0,
+                color: AppColors.grey,
+                width: 2.0,
               ),
             ),
             errorBorder: UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(color: Colors.red,width: 2),
             ),
             focusedErrorBorder: UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(color: Colors.red, width: 2),
             ),
             focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
                 color: AppColors.primaryColor,
                 width: 3.0,

@@ -41,103 +41,114 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primaryColor,
       body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15,vertical:30 ),
             child: ListView(
               children: [
-                Image.asset(AppImages.logo,width: 100,height: 150,),
-                Center(
-                  child: Column(
-                    children: [
-                      Text("Welcome Back",
-                        style:AppStyles.textStyle24.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primaryColor
-                        )
-                      ),
-                      Text("Login to continue",
-                        style:AppStyles.textStyle22.copyWith(
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.primaryColor
-                        )
-                      ),
-                    ]
-                  )
-                ),
+                // Image.asset(AppImages.logo,width: 100,height: 150,color: AppColors.primaryColor,),
+                // Center(
+                //   child: Column(
+                //     children: [
+                //       Text("Welcome Back",
+                //         style:AppStyles.textStyle24.copyWith(
+                //             fontWeight: FontWeight.bold,
+                //             color: AppColors.primaryColor
+                //         )
+                //       ),
+                //       Text("Login to continue",
+                //         style:AppStyles.textStyle22.copyWith(
+                //             fontWeight: FontWeight.w400,
+                //             color: AppColors.primaryColor
+                //         )
+                //       ),
+                //     ]
+                //   )
+                // ),
                 SizedBox(height: 70,),
-                Form(
-                  key: _formKey,
-                     child: Column(
-                         children: [
-                           CustomTextField(controller: emailController,warn : "Email is required",label: "Email Address", hint: "Enter you Email"),
-                           SizedBox(height: 18,),
-                           CustomPassword(
-                             controller: passwordController,
-                               warn: " Password is required",
-                               label: "Password",
-                               hint: "Enter you password",
-                               suffixIcon: IconButton(
-                                 onPressed: (){
-                                   setState(() {
-                                     _obscureText = !_obscureText;
-                                   });
-                                 },
-                                 icon: Icon(
-                                   _obscureText ? Icons.visibility_off : Icons.visibility,
-                                   color: AppColors.primaryColor,
-                                   size: 25,
-                                 ),
-                               ),
-                               obscureText: _obscureText
-                           ),
-                           SizedBox(height: 12,),
-                           GestureDetector(
-                             onTap: ()
-                             {
-                               GoRouter.of(context).push(PagesRoute.forgetPass);
-                             },
-                             child: Align(
-                               alignment: Alignment.centerRight,
-                               child: Text("Forget Password",
-                                 style:AppStyles.textStyle20.copyWith(
-                                     color: AppColors.primaryColor,
-                                     fontWeight: FontWeight.w500
-                                 )
-                               ),
-                             ),
-                           ),
-                           SizedBox(height: 85,),
-                           customElevatedButton(
-                             foregroundColor: _isButtonEnabled ? AppColors.black : AppColors.primaryColor,
-                             backgroundColor: _isButtonEnabled ? AppColors.primaryColor : AppColors.grey,
-                             label: "Log In",
-                             onPressed: (){},
-                           ),
-                           SizedBox(height: 40,),
-                           Row(
-                             mainAxisAlignment: MainAxisAlignment.center,
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(24)
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 23,vertical: 90),
+                    child: Form(
+                      key: _formKey,
+                         child: Column(
                              children: [
-                               Text("Don’t have an account? ",
-                                 style:AppStyles.textStyle18.copyWith(
-                                     fontWeight: FontWeight.w500
-                                 )
+                               CustomTextField(controller: emailController,warn : "Email is required",label: "E-mail Address", hint: "Enter you Email"),
+                               SizedBox(height: 18,),
+                               CustomPassword(
+                                 controller: passwordController,
+                                   warn: " Password is required",
+                                   label: "Password",
+                                   hint: "Enter you password",
+                                   suffixIcon: IconButton(
+                                     onPressed: (){
+                                       setState(() {
+                                         _obscureText = !_obscureText;
+                                       });
+                                     },
+                                     icon: Icon(
+                                       _obscureText ? Icons.visibility_off : Icons.visibility,
+                                       color: AppColors.grey,
+                                       size: 25,
+                                     ),
+                                   ),
+                                   obscureText: _obscureText
                                ),
+                               SizedBox(height: 12,),
                                GestureDetector(
-                                 onTap: (){
-                                   GoRouter.of(context).push(PagesRoute.init);
+                                 onTap: ()
+                                 {
+                                   GoRouter.of(context).push(PagesRoute.forgetPass);
                                  },
-                                 child: Text("Sign up now",
-                                   style:AppStyles.textStyle18.copyWith(
-                                       fontWeight: FontWeight.w500,
-                                       color: AppColors.primaryColor
-                                   )
+                                 child: Align(
+                                   alignment: Alignment.centerRight,
+                                   child: Text("Forget Password",
+                                     style:AppStyles.textStyle20.copyWith(
+                                         color: AppColors.primaryColor,
+                                         fontWeight: FontWeight.w500
+                                     )
+                                   ),
                                  ),
+                               ),
+                               SizedBox(height: 90,),
+                               customElevatedButton(
+                                 width: 500,
+                                 foregroundColor: _isButtonEnabled ? AppColors.black : AppColors.grey,
+                                 backgroundColor: _isButtonEnabled ? AppColors.primaryColor : AppColors.white,
+                                 label: "Log In",
+                                 onPressed: (){},
+                               ),
+                               SizedBox(height: 40,),
+                               Row(
+                                 mainAxisAlignment: MainAxisAlignment.center,
+                                 children: [
+                                   Text("Don’t have an account? ",
+                                     style:AppStyles.textStyle18.copyWith(
+                                         fontWeight: FontWeight.w500
+                                     )
+                                   ),
+                                   GestureDetector(
+                                     onTap: (){
+                                       GoRouter.of(context).push(PagesRoute.register);
+                                     },
+                                     child: Text("Sign up now",
+                                       style:AppStyles.textStyle18.copyWith(
+                                           fontWeight: FontWeight.w500,
+                                           color: AppColors.primaryColor
+                                       )
+                                     ),
+                                   )
+                                 ],
                                )
                              ],
-                           )
-                         ],
-                     )
+                         )
+                    ),
+                  ),
                 ),
               ],
                   ),

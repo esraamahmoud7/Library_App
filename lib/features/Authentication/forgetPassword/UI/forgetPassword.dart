@@ -63,6 +63,7 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
                 CustomTextField(label: 'Email', hint: 'Enter Email Address', warn: 'Email is required',controller: emailController,),
                 SizedBox(height: 50,),
                 customElevatedButton(
+                  width: 500,
                   label: 'Send',
                   foregroundColor: _isButtonEnabled ? AppColors.black : AppColors.primaryColor,
                   backgroundColor: _isButtonEnabled ? AppColors.primaryColor : AppColors.grey,

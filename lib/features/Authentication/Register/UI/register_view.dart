@@ -6,6 +6,7 @@ import 'package:library_app/features/Authentication/Register/UI/widgets/custom_t
 
 import '../../../../core/Routes/pageRoutes.dart';
 import '../../../../core/colors/AppColors.dart';
+import '../../../../core/images/app_images.dart';
 import '../../../../core/theme/appTheme.dart';
 
 class RegisterView extends StatefulWidget {
@@ -53,7 +54,7 @@ class _RegisterViewState extends State<RegisterView> {
           padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
           child: ListView(
             children: [
-              Image.asset("assets/images/logo.png",width: 100,height: 150,),
+              Image.asset(AppImages.logo,width: 100,height: 150,color: AppColors.primaryColor,),
               Center(
                 child: Text("Create An Account",
                   style: AppStyles.textStyle24.copyWith(
@@ -109,8 +110,9 @@ class _RegisterViewState extends State<RegisterView> {
                       ),
                       SizedBox(height: 50,),
                       customElevatedButton(
-                        foregroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.black : AppColors.primaryColor,
-                        backgroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.primaryColor : AppColors.grey,
+                        width: 500,
+                        foregroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.white : AppColors.grey,
+                        backgroundColor: _isButtonEnabled && _formKey.currentState?.validate() == true? AppColors.primaryColor : AppColors.white,
                         label: "Sign Up",
                         onPressed: _isButtonEnabled
                             ? () {

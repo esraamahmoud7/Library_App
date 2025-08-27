@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import '../colors/AppColors.dart';
+
 abstract class AppStyles {
   static const textStyle18 = TextStyle(
     fontSize: 18,
@@ -28,12 +30,16 @@ abstract class AppStyles {
   );
   static const textStyle14 = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w600,
+    // fontWeight: FontWeight.w600,
   );
 
   static const textStyle16 = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+  );
+  static const textStyle40 = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+    color: AppColors.white
   );
 }
 
