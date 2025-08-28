@@ -3,7 +3,7 @@ import 'package:library_app/core/colors/AppColors.dart';
 import 'package:library_app/features/welcome/UI/HomeView.dart';
 import 'package:library_app/features/welcome/UI/widgets/customAppBar.dart';
 //47
-import 'info.dart';
+import '../../Services/About Us/UI/info.dart';
 
 class NavigatorControl extends StatefulWidget {
   const NavigatorControl({super.key});

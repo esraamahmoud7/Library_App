@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/AppData/Info.dart';
-import '../../../../../core/colors/AppColors.dart';
-import '../../../../../core/theme/appTheme.dart';
+import '../AppData/Info.dart';
+import '../colors/AppColors.dart';
+import '../theme/appTheme.dart';
 
 
-class bookBorrowInfo extends StatelessWidget {
-  const bookBorrowInfo({
-    super.key,
+class ServiceInfo extends StatelessWidget {
+  const ServiceInfo({
+    super.key, required this.info,
   });
+
+  final String info;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +26,11 @@ class bookBorrowInfo extends StatelessWidget {
           borderRadius: BorderRadius.circular(22),
           border: Border.all(
             color: AppColors.primaryColor,   // border color
-            width: 1,           // border thickness
+            width: 1.5,           // border thickness
           ),
         ),
         child: SingleChildScrollView(
-          child: Text(AppInfo.bookServiceInfo,
+          child: Text(info,
             style: AppStyles.textStyle16,
           ),
         ),

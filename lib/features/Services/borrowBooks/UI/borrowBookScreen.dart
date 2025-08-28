@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/features/Services/borrowBooks/UI/widgets/PDFsListView.dart';
 import 'package:library_app/features/Services/borrowBooks/UI/widgets/RequestBox.dart';
-import 'package:library_app/features/Services/borrowBooks/UI/widgets/customBookServiceInfo.dart';
 import 'package:library_app/features/Services/borrowBooks/UI/widgets/linksListView.dart';
+import '../../../../core/AppData/Info.dart';
 import '../../../../core/theme/appTheme.dart';
+import '../../../../core/widgets/ServiceInfo.dart';
 
 class BorrowBooksView extends StatelessWidget {
   const BorrowBooksView({super.key, required this.onBack});
@@ -30,7 +31,7 @@ class BorrowBooksView extends StatelessWidget {
             ],
           ),
           SizedBox(height: 24,),
-          bookBorrowInfo(),
+          ServiceInfo(info: AppInfo.bookServiceInfo,),
           SizedBox(height: 32,),
           RequestBox(
             question: "How to request books ?",
