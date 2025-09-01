@@ -7,6 +7,7 @@ import 'package:library_app/features/welcome/UI/widgets/customAppBar.dart';
 //47
 import '../../Services/About Us/UI/info.dart';
 import '../../Services/GradProjects/UI/GradProjects.dart';
+import '../../Services/Rooms/UI/Avail Rooms.dart';
 
 class NavigatorControl extends StatefulWidget {
   const NavigatorControl({super.key});
@@ -23,12 +24,12 @@ class _NavigatorControlState extends State<NavigatorControl> {
     const HomeVew(),
     const InfoPage(),
     const GradProjects(),
-    // const BookRoom(),
+    const AvailableRooms(),
   ];
 
   void _onItemTapped(int index)
   {
-    if (index == 3) {
+    if (index == 4) {
       GoRouter.of(context).push(PagesRoute.more);
     }
     else
@@ -64,10 +65,10 @@ class _NavigatorControlState extends State<NavigatorControl> {
               icon: Icon(Icons.storage_outlined),
               label: "Orders",
             ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.business_outlined),
-            //   label: "Bookings",
-            // ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business_outlined),
+              label: "Bookings",
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.menu),
               label: "More",
