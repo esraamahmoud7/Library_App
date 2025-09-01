@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:library_app/core/Routes/pageRoutes.dart';
 import 'package:library_app/features/Services/more/More/UI/widgets/MenuItem.dart';
 
 import '../../../../../core/widgets/backarrowPage.dart';
@@ -46,7 +47,7 @@ class MoreView extends StatelessWidget {
               icon: Icons.access_time,
               title: "Available time",
               onTap: () {
-                // Navigate to Available time page
+                GoRouter.of(context).push(PagesRoute.time);
               },
             ),
           ],

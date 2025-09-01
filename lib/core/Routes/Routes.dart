@@ -8,6 +8,7 @@ import 'package:library_app/features/welcome/UI/welcomeScreen.dart';
 import '../../features/Authentication/LogIn/UI/Login_View.dart';
 import '../../features/Authentication/OTP/UI/OTP_View.dart';
 import '../../features/Authentication/Register/UI/register_view.dart';
+import '../../features/Services/more/AvailTime/UI/Available Time.dart';
 import '../../features/Services/more/More/UI/moreView.dart';
 import '../../features/welcome/UI/Splach Screen.dart';
 
@@ -52,7 +53,7 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: PagesRoute.time,
-      builder: (context, state) => const MoreView(),
+      builder: (context, state) => const AvailableTimeView(),
     ),
   ]
   );
