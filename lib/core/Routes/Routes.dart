@@ -2,13 +2,13 @@ import 'package:go_router/go_router.dart';
 import 'package:library_app/core/Routes/pageRoutes.dart';
 import 'package:library_app/features/Authentication/forgetPassword/UI/changePassView.dart';
 import 'package:library_app/features/Authentication/forgetPassword/UI/forgetPassword.dart';
-import 'package:library_app/features/Services/GradProjects/UI/ProjectView.dart';
 import 'package:library_app/features/welcome/UI/NavigatorControl.dart';
 import 'package:library_app/features/welcome/UI/welcomeScreen.dart';
 
 import '../../features/Authentication/LogIn/UI/Login_View.dart';
 import '../../features/Authentication/OTP/UI/OTP_View.dart';
 import '../../features/Authentication/Register/UI/register_view.dart';
+import '../../features/Services/more/More/UI/moreView.dart';
 import '../../features/welcome/UI/Splach Screen.dart';
 
 
@@ -45,7 +45,15 @@ abstract class AppRouter {
     GoRoute(
         path: PagesRoute.changePass,
         builder: (context,state)=> const ChangePassView()
-    )
+    ),
+    GoRoute(
+      path: PagesRoute.more,
+      builder: (context, state) => const MoreView(),
+    ),
+    GoRoute(
+      path: PagesRoute.time,
+      builder: (context, state) => const MoreView(),
+    ),
   ]
   );
 }

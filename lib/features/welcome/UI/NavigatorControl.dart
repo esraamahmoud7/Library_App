@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:library_app/core/Routes/pageRoutes.dart';
 import 'package:library_app/core/colors/AppColors.dart';
 import 'package:library_app/features/welcome/UI/HomeView.dart';
 import 'package:library_app/features/welcome/UI/widgets/customAppBar.dart';
@@ -22,14 +24,20 @@ class _NavigatorControlState extends State<NavigatorControl> {
     const InfoPage(),
     const GradProjects(),
     // const BookRoom(),
-    // const MorePage(),
   ];
 
   void _onItemTapped(int index)
   {
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (index == 3) {
+      GoRouter.of(context).push(PagesRoute.more);
+    }
+    else
+      {
+        setState(() {
+          _selectedIndex = index;
+        });
+      }
+
   }
 
   @override
@@ -56,10 +64,10 @@ class _NavigatorControlState extends State<NavigatorControl> {
               icon: Icon(Icons.storage_outlined),
               label: "Orders",
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business_outlined),
-              label: "Bookings",
-            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.business_outlined),
+            //   label: "Bookings",
+            // ),
             BottomNavigationBarItem(
               icon: Icon(Icons.menu),
               label: "More",

@@ -6,10 +6,10 @@ import '../theme/appTheme.dart';
 class backPage extends StatelessWidget {
   const backPage({
     super.key,
-    required this.onBack, required this.title,
+    this.onBack, required this.title,
   });
 
-  final VoidCallback onBack;
+  final VoidCallback? onBack;
   final String title;
 
   @override

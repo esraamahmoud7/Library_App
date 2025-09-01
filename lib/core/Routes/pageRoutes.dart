@@ -8,6 +8,10 @@ class PagesRoute{
   static const String changePass = "/changePass";
   static const String home = "/Home";
   static const String projectDetails = "/ProDetails";
+  static const String more = "/more";
+  static const String faqs = "/more";
+  static const String account = "/more";
+  static const String time = "/more";
 
 
 
