@@ -23,7 +23,7 @@ class MoreView extends StatelessWidget {
               icon: Icons.help_outline,
               title: "FAQ",
               onTap: () {
-                // Navigate to FAQ page
+                GoRouter.of(context).push(PagesRoute.faqs);
               },
             ),
             SizedBox(height: 32,),
