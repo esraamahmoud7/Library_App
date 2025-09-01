@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:library_app/core/Routes/pageRoutes.dart';
 import 'package:library_app/features/Authentication/forgetPassword/UI/changePassView.dart';
 import 'package:library_app/features/Authentication/forgetPassword/UI/forgetPassword.dart';
+import 'package:library_app/features/Services/GradProjects/UI/ProjectView.dart';
 import 'package:library_app/features/welcome/UI/NavigatorControl.dart';
 import 'package:library_app/features/welcome/UI/welcomeScreen.dart';
 

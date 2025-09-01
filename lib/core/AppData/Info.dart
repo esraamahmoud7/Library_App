@@ -1,5 +1,5 @@
 class AppInfo{
   static final String bookServiceInfo = "Our library offers a convenient book borrowing service to support your academic, research, and personal reading needs. Registered members can borrow books for a specified period, with the option to renew if the book is not reserved by another user. Borrowed items must be returned on time to ensure availability for all members. This service is designed to make our resources more accessible and encourage continuous learning";
   static final String aboutUs = "Our library offers a convenient book borrowing service to support your academic, research, and personal reading needs. Registered members can borrow books for a specified period, with the option to renew if the book is not reserved by another user. Borrowed items must be returned on time to ensure availability for all members. This service is designed to make our resources more accessible and encourage continuous learning";
-
+  static final String projectData = "Natus aspernatur quis illo recusandae sint exercitationem at consequatur. Ratione rerum rem laboriosam tempore reprehenderit nihil hic numquam. Accusantium quidem consequuntur veritatis. Qui sed sapiente voluptas saepe ipsam illo modi tempora. Laudantium deserunt voluptate ipsum aut illum sit.";
 }

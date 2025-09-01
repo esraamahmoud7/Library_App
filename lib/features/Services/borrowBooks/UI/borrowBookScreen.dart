@@ -5,6 +5,7 @@ import 'package:library_app/features/Services/borrowBooks/UI/widgets/linksListVi
 import '../../../../core/AppData/Info.dart';
 import '../../../../core/theme/appTheme.dart';
 import '../../../../core/widgets/ServiceInfo.dart';
+import '../../../../core/widgets/backarrowPage.dart';
 
 class BorrowBooksView extends StatelessWidget {
   const BorrowBooksView({super.key, required this.onBack});
@@ -17,19 +18,7 @@ class BorrowBooksView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
       child: ListView(
         children: [
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new,),
-                onPressed: onBack, // go back to home
-              ),
-              Text("Borrowing books",
-                style: AppStyles.textStyle24.copyWith(
-                    fontWeight: FontWeight.w800
-                ),
-              ),
-            ],
-          ),
+          backPage(onBack: onBack,title: "Borrowing Books"),
           SizedBox(height: 24,),
           ServiceInfo(info: AppInfo.bookServiceInfo,),
           SizedBox(height: 32,),

@@ -7,6 +7,8 @@ class PagesRoute{
   static const String forgetPass = "/forgetPass";
   static const String changePass = "/changePass";
   static const String home = "/Home";
+  static const String projectDetails = "/ProDetails";
+
 
 
 }

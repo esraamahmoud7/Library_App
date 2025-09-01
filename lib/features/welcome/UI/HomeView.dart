@@ -53,8 +53,10 @@ class _HomeVewState extends State<HomeVew> {
                   {
                     borderColor = AppColors.primaryColor;
                     textColor = AppColors.primaryColor;
-                    setState(() {});
-                    showBorrowBooks = true; // switch to BorrowBooks
+                    setState(() {
+                      showBorrowBooks = true;
+                    });
+                    // showBorrowBooks = true; // switch to BorrowBooks
                     Future.delayed(Duration(milliseconds: 80), () {});
                   }, borderColor: borderColor, textColor: textColor,
               ),

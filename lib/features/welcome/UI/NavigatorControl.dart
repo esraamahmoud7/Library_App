@@ -4,6 +4,7 @@ import 'package:library_app/features/welcome/UI/HomeView.dart';
 import 'package:library_app/features/welcome/UI/widgets/customAppBar.dart';
 //47
 import '../../Services/About Us/UI/info.dart';
+import '../../Services/GradProjects/UI/GradProjects.dart';
 
 class NavigatorControl extends StatefulWidget {
   const NavigatorControl({super.key});
@@ -19,7 +20,7 @@ class _NavigatorControlState extends State<NavigatorControl> {
   final List<Widget> _pages = [
     const HomeVew(),
     const InfoPage(),
-    // const OrdersPage(),
+    const GradProjects(),
     // const BookRoom(),
     // const MorePage(),
   ];
@@ -52,7 +53,7 @@ class _NavigatorControlState extends State<NavigatorControl> {
               label: "Info",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.inventory_2_outlined),
+              icon: Icon(Icons.storage_outlined),
               label: "Orders",
             ),
             BottomNavigationBarItem(
