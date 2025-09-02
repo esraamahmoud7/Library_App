@@ -6,6 +6,7 @@ import 'package:library_app/features/Authentication/Register/UI/widgets/custom_t
 
 import '../../../../core/Routes/pageRoutes.dart';
 import '../../../../core/colors/AppColors.dart';
+import '../../../../core/functions/regex.dart';
 import '../../../../core/images/app_images.dart';
 import '../../../../core/theme/appTheme.dart';
 
@@ -54,6 +55,11 @@ class _RegisterViewState extends State<RegisterView> {
           padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
           child: ListView(
             children: [
+              Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(onPressed: (){
+                    GoRouter.of(context).go(PagesRoute.welcome);
+                  }, icon: Icon(Icons.arrow_back_ios_new))),
               Image.asset(AppImages.logo,width: 100,height: 150,color: AppColors.primaryColor,),
               Center(
                 child: Text("Create An Account",
@@ -68,13 +74,28 @@ class _RegisterViewState extends State<RegisterView> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      CustomTextField(warn : "Name is required",label: "Name",hint: 'Enter your name',controller: nameController,),
-                      CustomTextField(warn : "Email is required",label: "Email",prefixIcon: Icon(Icons.email_outlined,color: AppColors.primaryColor,size: 25,),hint: 'Enter your email',controller: emailController,),
+                      CustomTextField(
+                        validator: (value){
+                          if (value == null || value.isEmpty) {
+                            return "Your name is required";
+                          }
+                        },
+                        warn : "Name is required",label: "Name",hint: 'Enter your name',controller: nameController,prefixIcon: Icon(Icons.person_2_outlined,color: AppColors.primaryColor,),),
+                      CustomTextField(
+                        validator: (value){
+                          if (value == null || value.isEmpty) {
+                            return "Email is required";
+                          } else if (!isValidEmail(value)) {
+                            return "Invalid email format";
+                          }
+                        },
+                        warn : "Email is required",label: "Email",prefixIcon: Icon(Icons.email_outlined,color: AppColors.primaryColor,size: 25,),hint: 'Enter your email',controller: emailController,),
                       CustomPassword(
                         controller: passwordController,
                         warn: " Password is required",
                         label: "Password",
                         hint: 'Enter your Password',
+                        prefixIcon: Icon(Icons.lock,color: AppColors.primaryColor,),
                         suffixIcon: IconButton(
                             onPressed: (){
                               setState(() {
@@ -94,6 +115,7 @@ class _RegisterViewState extends State<RegisterView> {
                         warn: " Confirm Password is required",
                         label: "Confirm Password",
                         hint: 'Confirm your Password',
+                        prefixIcon: Icon(Icons.lock,color: AppColors.primaryColor,),
                         suffixIcon: IconButton(
                           onPressed: (){
                             setState(() {

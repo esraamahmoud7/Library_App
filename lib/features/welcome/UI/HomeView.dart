@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:library_app/core/widgets/backarrowPage.dart';
 import 'package:library_app/features/welcome/UI/widgets/custom%20Button.dart';
 
 import '../../../core/Routes/pageRoutes.dart';
@@ -38,14 +39,15 @@ class _HomeVewState extends State<HomeVew> {
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 25),
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text("Explore Services",
-                  style: AppStyles.textStyle24.copyWith(
-                      fontWeight: FontWeight.w800
-                  ),
-                ),
-              ),
+              backPage(title: "Explore Services",onBack: (){GoRouter.of(context).push(PagesRoute.welcome);},),
+              // Align(
+              //   alignment: Alignment.topLeft,
+              //   child: Text("Explore Services",
+              //     style: AppStyles.textStyle24.copyWith(
+              //         fontWeight: FontWeight.w800
+              //     ),
+              //   ),
+              // ),
               const SizedBox(height: 131,),
               CustomButton(
                 title: "Borrowing Book",

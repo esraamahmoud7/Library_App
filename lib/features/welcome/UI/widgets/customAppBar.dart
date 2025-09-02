@@ -18,11 +18,9 @@ class customAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 20),
-          child: Row(
-            children: [
-              Image.asset("assets/images/alert.png")
-            ],
-          ),
+          child: GestureDetector(
+              onTap: (){},
+              child: Image.asset("assets/images/alert.png")),
         ),
       ],
       bottom: PreferredSize(

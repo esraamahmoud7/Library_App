@@ -17,7 +17,7 @@ class MoreView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
         child: ListView(
           children: [
-            backPage(onBack: (){GoRouter.of(context).pop();},title: "More"),
+            backPage(onBack: (){GoRouter.of(context).go(PagesRoute.home);},title: "More"),
             SizedBox(height: 30,),
             BuildMenuItem(
               icon: Icons.help_outline,
@@ -31,7 +31,7 @@ class MoreView extends StatelessWidget {
               icon: Icons.person_outline,
               title: "Account",
               onTap: () {
-                // Navigate to Account page
+                GoRouter.of(context).push(PagesRoute.account);
               },
             ),
             SizedBox(height: 32,),
@@ -39,7 +39,7 @@ class MoreView extends StatelessWidget {
               icon: Icons.logout,
               title: "Logout",
               onTap: () {
-                // Perform logout
+                GoRouter.of(context).go(PagesRoute.welcome);
               },
             ),
             SizedBox(height: 32,),

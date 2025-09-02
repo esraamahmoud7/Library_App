@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/Routes/pageRoutes.dart';
 import '../../../../core/colors/AppColors.dart';
+import '../../../../core/functions/regex.dart';
 import '../../../../core/images/app_images.dart';
 import '../../../../core/theme/appTheme.dart';
 import '../../Register/UI/widgets/customElevatedButton.dart';
@@ -78,7 +79,16 @@ class _LoginViewState extends State<LoginView> {
                       key: _formKey,
                          child: Column(
                              children: [
-                               CustomTextField(controller: emailController,warn : "Email is required",label: "E-mail Address", hint: "Enter you Email"),
+                               CustomTextField(
+                                   validator: (value)
+                                   {
+                                     if (value == null || value.isEmpty) {
+                                       return "Email is required";
+                                     } else if (!isValidEmail(value)) {
+                                       return "Invalid email format";
+                                     }
+                                   },
+                                   controller: emailController,warn : "Email is required",label: "E-mail Address", hint: "Enter you Email"),
                                SizedBox(height: 18,),
                                CustomPassword(
                                  controller: passwordController,

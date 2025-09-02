@@ -5,6 +5,7 @@ import 'package:library_app/core/theme/appTheme.dart';
 import 'package:library_app/features/Authentication/Register/UI/widgets/customElevatedButton.dart';
 
 import '../../../../core/Routes/pageRoutes.dart';
+import '../../../../core/functions/regex.dart';
 import '../../Register/UI/widgets/custom_textField.dart';
 
 class ForgetPasswordView extends StatefulWidget {
@@ -60,7 +61,16 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
                   ),
                 ),
                 SizedBox(height: 35,),
-                CustomTextField(label: 'Email', hint: 'Enter Email Address', warn: 'Email is required',controller: emailController,),
+                CustomTextField(
+                  validator: (value)
+                  {
+                    if (value == null || value.isEmpty) {
+                        return "Email is required";
+                      } else if (!isValidEmail(value)) {
+                        return "Invalid email format";
+                      }
+                  },
+                  label: 'Email', hint: 'Enter Email Address', warn: 'Email is required',controller: emailController,),
                 SizedBox(height: 50,),
                 customElevatedButton(
                   width: 500,

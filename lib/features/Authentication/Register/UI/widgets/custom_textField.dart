@@ -5,11 +5,12 @@ import '../../../../../core/functions/regex.dart';
 import '../../../../../core/theme/appTheme.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.label, this.prefixIcon, required this.hint, required this.warn, this.controller});
+  const CustomTextField({super.key, required this.label, this.prefixIcon, required this.hint, required this.warn, this.controller, this.suffixIcon, this.validator});
 
   final String label,hint,warn;
-  final Widget? prefixIcon;
+  final Widget? prefixIcon,suffixIcon;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +28,16 @@ class CustomTextField extends StatelessWidget {
         ),
         SizedBox(height: 10),
         TextFormField(
-          validator: (value)
-          {
-            if(label == "Email" || label == "Email Address")
-              {
-                if (value == null || value.isEmpty) {
-                  return "Email is required";
-                } else if (!isValidEmail(value)) {
-                  return "Invalid email format";
-                }
-                return null; // valid
-              }
-          },
+          validator: validator,
           controller: controller,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
             hintText: hint,
+            hintStyle: AppStyles.textStyle18.copyWith(
+              color: AppColors.primaryColor,
+              fontWeight: FontWeight.w400
+            ),
             contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),

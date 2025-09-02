@@ -27,7 +27,6 @@ class AvailableRooms extends StatelessWidget {
                   {
                     return RoomBox();
                   }
-
           )
         ],
       ),
