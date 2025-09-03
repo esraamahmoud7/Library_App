@@ -13,5 +13,6 @@ class PagesRoute{
   static const String account = "/account";
   static const String accountDetails = "/accountDetails";
   static const String time = "/availTime";
+  static const String notification = "/notification";
 
 }

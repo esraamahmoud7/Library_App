@@ -5,6 +5,7 @@ import 'package:library_app/features/Authentication/forgetPassword/UI/forgetPass
 import 'package:library_app/features/Services/more/Account/UI/accountDetailsView.dart';
 import 'package:library_app/features/Services/more/Account/UI/my%20account.dart';
 import 'package:library_app/features/Services/more/FAQ/UI/FAQs.dart';
+import 'package:library_app/features/notification/UI/notification_view.dart';
 import 'package:library_app/features/welcome/UI/NavigatorControl.dart';
 import 'package:library_app/features/welcome/UI/welcomeScreen.dart';
 
@@ -69,6 +70,10 @@ abstract class AppRouter {
     GoRoute(
       path: PagesRoute.faqs,
       builder: (context, state) => const FAQs(),
+    ),
+    GoRoute(
+      path: PagesRoute.notification,
+      builder: (context, state) => const NotificationView(),
     ),
   ]
   );

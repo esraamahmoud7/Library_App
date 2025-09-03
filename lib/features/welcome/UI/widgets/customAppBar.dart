@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:library_app/core/Routes/pageRoutes.dart';
 
 import '../../../../core/colors/AppColors.dart';
 
@@ -19,8 +21,10 @@ class customAppBar extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.only(right: 20),
           child: GestureDetector(
-              onTap: (){},
-              child: Image.asset("assets/images/alert.png")),
+              onTap: (){
+                GoRouter.of(context).push(PagesRoute.notification);
+              },
+              child: Image.asset("assets/images/notification-bell-outline.png")),
         ),
       ],
       bottom: PreferredSize(

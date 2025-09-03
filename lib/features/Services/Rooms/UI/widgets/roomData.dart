@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/features/Services/Rooms/UI/widgets/timeWdget.dart';
 
 import '../../../../../core/theme/appTheme.dart';
 
@@ -32,17 +33,7 @@ class RoomData extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 8,),
-            Row(
-              children: [
-                Icon(Icons.access_time,),
-                SizedBox(width: 10),
-                Text(
-                  "10 Am : 3 PM",
-                  style: AppStyles.textStyle18,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
+            TimeCustomWidget(time: "10 Am : 3 PM",),
           ],
         ),
       ),
